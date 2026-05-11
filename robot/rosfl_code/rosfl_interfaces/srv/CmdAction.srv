@@ -1,0 +1,5 @@
+string mode
+int16[] param
+string json_param
+---
+bool success

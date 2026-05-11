@@ -1,0 +1,14 @@
+int16 id
+string node_name
+bool upload_success
+bool train_success
+float32 finish_rate
+---
+int16 node_id
+bool success
+uint8[] model_data
+int64 model_size
+int32 num_rounds
+int32 train_samples
+float32 total_cost
+

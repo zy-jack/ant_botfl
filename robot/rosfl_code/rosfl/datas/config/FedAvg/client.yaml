@@ -1,0 +1,24 @@
+
+
+device: cuda
+save_folder_name: items
+
+
+algorithm: FedAvg
+model: ResNet8
+dataset: SVHN
+num_classes: 10
+
+target_server: ros_server
+
+
+batch_size: 10
+local_epochs: 1
+local_learning_rate: 0.1
+few_shot: 0
+
+
+learning_rate_decay: true
+learning_rate_decay_gamma: 0.98
+
+timeout_check: 10

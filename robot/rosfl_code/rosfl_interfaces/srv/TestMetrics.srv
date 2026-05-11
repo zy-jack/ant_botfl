@@ -1,0 +1,8 @@
+int16 id
+string node_name
+---
+int16 node_id
+bool success
+float32 test_acc
+int32 test_num
+float32 auc

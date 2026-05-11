@@ -1,0 +1,8 @@
+string node_name
+---
+int16 node_id
+int32 train_samples
+int32 test_samples
+bool train_slow
+bool send_slow
+string result_file_path

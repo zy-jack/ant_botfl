@@ -1,0 +1,38 @@
+
+
+device: cuda
+device_id: "0"
+
+
+algorithm: FedAvg
+model: ResNet8
+dataset: SVHN
+num_classes: 10
+num_clients: 10
+
+
+batch_size: 10
+global_rounds: 300
+local_epochs: 1
+local_learning_rate: 0.1
+few_shot: 0
+
+join_ratio: 1.0
+random_join_ratio: false
+goal: test
+save_folder_name: items
+auto_break: false
+top_cnt: 100
+eval_gap: 1
+client_drop_rate: 0.0
+train_slow_rate: 0.0
+send_slow_rate: 0.0
+
+time_select: false
+timeout_check: 10000
+timeout_train_model: 10000
+timeout_send_model: 10000
+timeout_metrics: 10000
+time_error: 10000
+
+result_path: ./result/

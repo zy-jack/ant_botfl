@@ -1,0 +1,7 @@
+int16 id
+string node_name
+---
+int16 node_id
+bool success
+float32 losses
+int32 train_num

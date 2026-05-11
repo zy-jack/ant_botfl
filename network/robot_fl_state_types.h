@@ -1,0 +1,44 @@
+#pragma once
+
+#include "ns3/command-line.h"
+#include "ns3/config-store-module.h"
+#include "ns3/internet-module.h"
+#include "ns3/isotropic-antenna-model.h"
+#include "ns3/lte-helper.h"
+#include "ns3/lte-module.h"
+#include "ns3/mobility-module.h"
+#include "ns3/netanim-module.h"
+#include "ns3/point-to-point-helper.h"
+
+using namespace ns3;
+
+
+struct ClientModels {
+    Ptr<Node> node;
+    int nodeTrainingTime;
+    int nodeModelSize;
+    bool selected;
+    double rsrp;
+    double sinr;
+    double accuracy;
+
+
+    ClientModels(Ptr<Node> n, int t, int b, bool s, double r, double sin, double acc);
+
+
+    ClientModels(Ptr<Node> n, int t, int b, double r, double sin, double acc);
+
+
+};
+
+
+std::ostream& operator<<(std::ostream& os, const ClientModels& model);
+
+
+struct NodesIps {
+    uint32_t nodeId;
+    uint32_t index;
+    Ipv4Address ip;
+
+    NodesIps(int n, int i, Ipv4Address ia);
+};
