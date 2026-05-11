@@ -40,7 +40,6 @@ class FedAvg(Server):
         finally:
             self.Budget.append(finish_time)
             print('-'*25, 'time cost', '-'*25, finish_time)
-            self.save_result()
             self.selected_clients = []
             self.round_index += 1
             if self.round_index >= self.global_rounds:

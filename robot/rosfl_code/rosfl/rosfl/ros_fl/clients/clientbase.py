@@ -406,11 +406,6 @@ class Client(Node):
         test_global_acc_trained = test_global_acc * 1.0 / test_global_num
         test_global_auc_trained = global_auc * 1.0
 
-        self.rs_test_local_acc_trained.append(test_local_acc_trained)
-        self.rs_test_local_auc_trained.append(test_local_auc_trained)
-        self.rs_test_global_acc_trained.append(test_global_acc_trained)
-        self.rs_test_global_auc_trained.append(test_global_auc_trained)
-
         self.get_logger().info(f"Post-training test evaluation completed (base): test_local_acc->{test_local_acc_trained}, test_local_auc->{test_local_auc_trained}, test_global_acc->{test_global_acc_trained}, test_global_auc->{test_global_auc_trained}")
 
     def test_metrics_aggregated(self):
@@ -421,11 +416,6 @@ class Client(Node):
         test_global_acc, test_global_num, global_auc = self.test_global_metrics()
         test_global_acc_aggregated = test_global_acc * 1.0 / test_global_num
         test_global_auc_aggregated = global_auc * 1.0
-
-        self.rs_test_local_acc_aggregated.append(test_local_acc_aggregated)
-        self.rs_test_local_auc_aggregated.append(test_local_auc_aggregated)
-        self.rs_test_global_acc_aggregated.append(test_global_acc_aggregated)
-        self.rs_test_global_auc_aggregated.append(test_global_auc_aggregated)
 
         self.get_logger().info(f"Post-aggregation test evaluation completed (base): test_local_acc->{test_local_acc_aggregated}, test_local_auc->{test_local_auc_aggregated}, test_global_acc->{test_global_acc_aggregated}, test_global_auc->{test_global_auc_aggregated}")
 
@@ -472,14 +462,12 @@ class Client(Node):
     def train_metrics_trained(self):
         losses_trained, train_num_trained = self.train_metrics()
         train_loss_trained = losses_trained * 1.0 / train_num_trained
-        self.rs_train_loss_trained.append(train_loss_trained)
         self.get_logger().info(f"Post-training loss evaluation completed (base): loss->{train_loss_trained}")
         pass
 
     def train_metrics_aggregated(self):
         losses_aggregated, train_num_aggregated = self.train_metrics()
         train_loss_aggregated = losses_aggregated * 1.0 / train_num_aggregated
-        self.rs_train_loss_aggregated.append(train_loss_aggregated)
         self.get_logger().info(f"Post-aggregation loss evaluation completed (base): loss->{train_loss_aggregated}")
         return losses_aggregated, train_num_aggregated
 

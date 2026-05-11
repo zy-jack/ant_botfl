@@ -683,18 +683,6 @@ class Server(Node):
         train_loss_local = sum(stats_train[2]) * 1.0 / sum(stats_train[1])
         test_acc_global, test_auc_global = self.test_global_metrics()
 
-        self.rs_test_micro_acc_local.append(test_micro_acc_local)
-        self.rs_test_micro_auc_local.append(test_micro_auc_local)
-        self.rs_test_macro_acc_local.append(test_macro_acc_local)
-        self.rs_test_macro_acc_std_local.append(test_macro_acc_std_local)
-        self.rs_test_macro_acc_worst_local.append(test_macro_worst_local)
-        self.rs_test_macro_auc_local.append(test_macro_auc_local)
-        self.rs_test_macro_auc_std_local.append(test_macro_auc_std_local)
-        self.rs_test_macro_auc_worst_local.append(test_macro_auc_worst_local)
-        self.rs_train_loss_local.append(train_loss_local)
-        self.rs_test_acc_global.append(test_acc_global)
-        self.rs_test_auc_global.append(test_auc_global)
-
         print("Local Train Loss: {:.4f}".format(train_loss_local))
         print("Local Micro Accuracy: {:.4f}".format(test_micro_acc_local))
         print("Local Macro Accuracy: {:.4f}".format(test_macro_acc_local))
