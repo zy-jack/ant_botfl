@@ -180,6 +180,19 @@ Use these files to configure LTE/network parameters, robot/network simulation se
 
 Future updates will provide extended network configurations, including support for 5G scenarios and additional wireless-side configurations.
 
+## Citation
+
+If you use this project in academic work, please cite the CRoWN-FL paper after publication. The BibTeX entry will be updated once the paper information is available.
+
+```bibtex
+@misc{yan2026crownfl,
+  title  = {CRoWN-FL: A Cross-Layer Federated Learning Simulation Framework for Mobile Robotic Collaboration over Wireless Networks},
+  author = {Zhenyu Yan and Zhenhui Yuan and Tianhao Peng and Ziyang Chen and Guangjing He and Yuming Zhang and Peng Li and Fei Song},
+  year   = {2026},
+  note   = {Submitted to IEEE GLOBECOM, under review}
+}
+```
+
 ## License
 
 This project is released under the AGPL-3.0 License. See the LICENSE file for details.
