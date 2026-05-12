@@ -4,7 +4,7 @@ CRoWN-FL is a cross-layer simulation framework for evaluating federated learning
 
 ## Demo
 
-Place your generated GIF at `assets/demo.gif`, or update the path below to match your repository layout.
+The following video demonstrates the round-level co-simulation workflow of CRoWN-FL, including robot mobility, wireless transmission, and federated learning execution.
 
 <p align="center">
   <img src="assets/demo.gif" width="850" alt="CRoWN-FL demo" />
@@ -17,30 +17,6 @@ Place your generated GIF at `assets/demo.gif`, or update the path below to match
 - **Mobility-aware wireless modeling**: robot trajectories are mapped to time-varying channel states, enabling mobility-driven path loss and fading effects.
 - **Packet-level model delivery**: FL model updates are packetized and transmitted through the wireless network stack instead of being assumed to arrive ideally.
 - **Extensible FL algorithms and models**: the current code provides a FedAvg reference implementation, and new algorithms/models can be added through the existing client/server and configuration interfaces.
-
-## Repository Structure
-
-```text
-ant_botfl/
-├── channel/                         # MATLAB channel-generation scripts
-├── network/                         # ns-3 wireless simulation and robot-FL network modules
-│   ├── robot_fl_simulation.cc
-│   ├── robot_fl_simulation_config.cc
-│   ├── robot_fl_simulation_config.h
-│   ├── robot_mobility_fading_model.*
-│   ├── ros_fl_round_coordinator.*
-│   └── wireless_transport_manager.*
-├── robot/                           # ROS 2 and FL-side implementation
-│   ├── requirements.txt             # Python dependencies
-│   ├── run/                         # ROS build/run helper scripts
-│   └── rosfl_code/rosfl/
-│       ├── datas/config/FedAvg/     # FedAvg configuration example
-│       └── rosfl/
-│           ├── dataset/             # Dataset generation scripts
-│           ├── ros_fl/              # FL clients, servers, optimizers, and models
-│           └── utils/               # Configuration and utility functions
-└── images/devices/                  # Device icons/assets
-```
 
 ## Prerequisites
 
